@@ -25,9 +25,11 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Grid.DetailsGenerator;
+import com.vaadin.ui.Grid.HeaderRow;
 import com.vaadin.ui.Grid.RowReference;
 import com.vaadin.ui.Grid.SelectionMode;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 public class GridDetailsDetach extends AbstractTestUI {
@@ -81,6 +83,8 @@ public class GridDetailsDetach extends AbstractTestUI {
         grid.setColumnOrder("name", "amount", "count");
         grid.setSizeFull();
         grid.setSelectionMode(SelectionMode.NONE);
+        HeaderRow headerRow = grid.appendHeaderRow();
+        headerRow.getCell("name").setComponent(new TextField());
 
         grid.setDetailsGenerator(new DetailsGenerator() {
             @Override

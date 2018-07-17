@@ -2190,7 +2190,7 @@ public class Escalator extends Widget
                 final int numberOfRows) {
             for (int i = index; i < index + numberOfRows; i++) {
                 final TableRowElement tr = root.getRows().getItem(index);
-                paintRemoveRow(tr, index);
+                paintRemoveRow(tr, i);
             }
             recalculateSectionHeight();
         }

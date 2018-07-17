@@ -1,6 +1,7 @@
 package com.vaadin.tests.components.grid;
 
 import java.util.List;
+import java.util.logging.Level;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,6 +29,7 @@ public class GridDetailsDetachTest extends MultiBrowserTest {
         $(ButtonElement.class).first().click();
 
         assertNoErrorNotifications();
+        assertNoDebugMessage(Level.SEVERE);
     }
 
     @Test
